@@ -35,7 +35,7 @@
 
 ## Схема подключения
 
-![Схема подключения](./docs/ESP_PC_Controller.svg)
+![Схема подключения](./docs/ESP_PC_Controller.png)
 
 ### Библиотеки Arduino
 
