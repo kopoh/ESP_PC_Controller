@@ -140,10 +140,8 @@ void handleUpdate(fb::Update &u) {
       restartFlag = true;
       bot.sendMessage(fb::Message("ESP перезагружается...", chatID));
 
-    } else if (text == "Включить ПК") {
+    } else if (text == "Включить/Выключить ПК") {
       startPC(chatID);
-    } else if (text == "Выключить ПК") {
-      shutdownPC(chatID);
     } else if (text == "Жёсткий сброс") {
       hardReset(chatID);
     } else if (text == "Мониторинг") {
@@ -291,8 +289,7 @@ void sendInlineMenu(const String &chatID) {
   // addButton("Надпись на кнопке", "callback_data")
 
   // Первая строка
-  menu.addButton("Включить ПК",  "startPC");    // data = "startPC"
-  menu.addButton("Выключить ПК", "shutdownPC"); // data = "shutdownPC"
+  menu.addButton("Включить/Выключить ПК", "startPC"); // data = "shutdownPC"
 
   // Вторая строка
   menu.newRow();
