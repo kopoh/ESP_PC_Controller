@@ -124,6 +124,8 @@ Power on the Wemos: once connected to Wi-Fi, the bot sends “Bot started!” to
  - “Мониторинг” — Pings PC_IP. If it replies, “PC is on,” otherwise “off.”
 
  - restart — Reboots the ESP.
+ 
+ ![Bot menu](./docs/bot_menu.png)
 
 ---
 
