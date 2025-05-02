@@ -20,9 +20,23 @@ This project emulates pressing the Power button on the motherboard using an N-ch
 
 ## Project Contents
 
-- **`ESP_PC_Controller.ino`** (or another `.ino` name) — the main Arduino sketch.  
-- **`/admins.txt`** (automatically created in LittleFS) — stores the list of admin Chat IDs.  
-- **`LICENSE`** — the Apache 2.0 license text.
+- **`ESP_PC_Controller.ino`** — main Arduino sketch.  
+- **`pc_switch_v2.3mf`** — STL file of the printable case for my custom version.  
+- **`LICENSE`** — Apache 2.0 license text.  
+- **`/docs/ESP_PC_Controller.png`** — connection diagram.  
+- **`/docs/bot_menu.png`** — Telegram bot inline menu.  
+- **`/docs/photos/without_case.png`** — controller PCB without case.  
+- **`/docs/photos/with_case.png`** — controller PCB in printed case.
+
+---
+
+## 🖼️ Gallery
+
+![Controller without case](./docs/photos/without_case.png)  
+*PCB assembled, no enclosure.*
+
+![Controller with case](./docs/photos/with_case.png)  
+*Everything tucked nicely inside the 3D-printed case.*
 
 ---
 
@@ -31,9 +45,11 @@ This project emulates pressing the Power button on the motherboard using an N-ch
 ### Hardware
 
 1. **Wemos D1 mini** (ESP8266) or equivalent (NodeMCU).  
-2. **N-channel MOSFET module** (e.g., Troyka N-MOSFET from Amperka).  
+2. **Optocoupler** (e.g., PC817) or any other switching device (MOSFET module, relay, etc.) that provides galvanic isolation between the ESP and the motherboard’s Power SW contacts.  
+   - If you use a MOSFET or relay without isolation, the ESP’s GND and the PC’s GND must be tied together.  
+   - If you use an optocoupler (or other isolating module), no shared ground is required—just drive the optocoupler input, and its internal transistor will switch the Power SW circuit.  
 3. **Wires**: 3–4 for connecting to the Wemos (power + signal), plus 2 wires to connect to the Power SW pins on the motherboard.  
-4. **A computer** whose power button (F_PANEL pins) you want to control.
+4. **A PC** whose power button (F_PANEL pins) you want to control (Power SW pins).
 
 ## Connection Diagram
 
